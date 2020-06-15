@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+
+let x,y,mouseX,mouseY;
+let sumdist =0;
+
+function m_move(){ 
+    mouseX = event.pageX;
+    mouseY = event.pageY;
+
+    let ddst = Math.sqrt(Math.pow((mouseX - x),2) + Math.pow((mouseY-y),2));
+    sumdist = !!ddst ? sumdist+ddst : sumdist; 
+    document.getElementById('distance').innerHTML = sumdist;
+
+    if (sumdist>8000 ){
+        document.getElementById('area').innerHTML = "エベレスト";
+        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?text=" +sumdist +"ピクセル動きました。・・・てことはエベレスト並み"); 
+
+    }else if(sumdist >3000){
+        document.getElementById('area').innerHTML = "富士山";
+        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?text=" +sumdist +"ピクセル動きました。・・・てことは富士山並み"); 
+        // document.getElementById("twlink").setAttribute("href",sumdist +"ピクセルてことは富士山並み"); 
+
+    }
+    
+    x =mouseX;
+    y =mouseY; 
+}
+
+</script>
+</head>
+<body onmousemove="m_move()" >
+
+    <div id="distance"></div>
+    <div id="area"></div>
+    <a id="twlink" href="" target="_blank">どれだけ動いたかシェアする</a>
+
+</body>
+</html>
