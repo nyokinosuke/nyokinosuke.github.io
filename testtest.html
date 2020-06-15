@@ -16,14 +16,16 @@ function m_move(){
 
     if (sumdist>8000 ){
         document.getElementById('area').innerHTML = "エベレスト";
-        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?text=" +sumdist +"ピクセル動きました。・・・てことはエベレスト並み"); 
+        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?url=https://nyokinosuke.github.io/testtest.html?text=" +sumdist +"ピクセル動きました。・・・てことはエベレスト並み"); 
 
     }else if(sumdist >3000){
         document.getElementById('area').innerHTML = "富士山";
-        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?text=" +sumdist +"ピクセル動きました。・・・てことは富士山並み"); 
+        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?url=https://nyokinosuke.github.io/testtest.html?text=" +sumdist +"ピクセル動きました。・・・てことは富士山並み"); 
         // document.getElementById("twlink").setAttribute("href",sumdist +"ピクセルてことは富士山並み"); 
-
+    }else{
+        document.getElementById("twlink").setAttribute("href","http://twitter.com/share?url=https://nyokinosuke.github.io/testtest.html?text=" +sumdist +"ピクセル動きました。まだまだ・・・。"); 
     }
+
     
     x =mouseX;
     y =mouseY; 
